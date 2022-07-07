@@ -8,16 +8,6 @@ def my_home():
     return render_template('index.html')
 
 
-@app.route("/index.html")
-def index():
-    return render_template('index.html')
-
-
-@app.route("/elements.html")
-def elements():
-    return render_template('elements.html')
-
-
-@app.route("/generic.html")
-def generic():
-    return render_template('generic.html')
+@app.route("/<string:page_name>")
+def index(page_name):
+    return render_template(page_name)
